@@ -20,9 +20,9 @@ class ActionSearchRestaurants(Action):
 		d1 = json.loads(location_detail)
 		lat=d1["location_suggestions"][0]["latitude"]
 		lon=d1["location_suggestions"][0]["longitude"]
-
 		cuisine = tracker.get_slot('cuisine')
 		cuisines_dict={'bakery':5,'chinese':25,'cafe':30,'italian':55,'biryani':7,'north indian':50,'south indian':85}
+		avg_ratting = ["aggregate_rating"]
 		results=zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 5)
 		d = json.loads(results)
 		response=""
@@ -30,7 +30,7 @@ class ActionSearchRestaurants(Action):
 			response= "no results"
 		else:
 			for restaurant in d['restaurants']:
-				response=response+ "Found "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+"\n"
+				response=response+ "Top 5 "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+ restaurant['aggregate_rating'] +"\n"
 		
 		dispatcher.utter_message("-----"+response)
 		return [SlotSet('location',loc)]
