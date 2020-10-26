@@ -1,0 +1,710 @@
+version: "2.0"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: test@gmail.com
+  - slot_was_set:
+    - email_address: test@gmail.com
+  - action: action_send_results
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: deny
+
+- story: interactive_story_3
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Mexican
+    - cuisine: Mexican
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - price: mid
+    - location: delhi
+    - price: mid
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - price: mid
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: interactive_story_5
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_search_restaurants
+  - action: utter_send_results
+  - intent: affirm
+  - action: action_send_results
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: interactive_story_6
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_search_restaurants
+  - action: utter_send_results
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_7
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Mexican
+    - cuisine: Mexican
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: deny
+    entities:
+    - deny: no
+  - action: utter_goodbye
+
+- story: interactive_story_8
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_9
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - price: Mid
+  - slot_was_set:
+    - price: Mid
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsh@gmail.com
+    - email_address: utkarsh@gmail.com
+  - slot_was_set:
+    - email_address: utkarsh@gmail.com
+  - action: action_send_results
+
+- story: interactive_story_10
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - price: Mid
+  - slot_was_set:
+    - price: Mid
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: mail@gmail.com
+    - email_address: mail@gmail.com
+  - slot_was_set:
+    - email_address: mail@gmail.com
+  - action: action_send_results
+
+- story: interactive_story_11
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: delhi
+    - price: mid
+    - cuisine: italian
+    - location: delhi
+    - price: mid
+  - slot_was_set:
+    - cuisine: italian
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - price: mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+    - results: The Big Chill in 68-A, Khan Market, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: action_send_results
+
+- story: interactive_story_12
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: mumbai
+    - cuisine: italian
+    - location: mumbai
+  - slot_was_set:
+    - cuisine: italian
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - price: Low
+  - slot_was_set:
+    - price: Low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+    - results: Pa Pa Ya in A-3, Select Citywalk, District Centre, Saket, Mumbai
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+
+- story: interactive_story_13
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: high
+    - location: mumbai
+    - price: high
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - price: high
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Mexican
+    - cuisine: Mexican
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+    - results: Cafe Lota in National Crafts Museum, Gate 2, Bhairon Marg, Pragati Maidan, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: test@hotmail.com
+    - email_address: test@hotmail.com
+  - slot_was_set:
+    - email_address: test@hotmail.com
+  - action: action_send_results
+
+- story: interactive_story_14
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - cuisine: chinese
+    - price: mid
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - slot_was_set:
+    - price: mid
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+    - results: Cafe Lota in National Crafts Museum, Gate 2, Bhairon Marg, Pragati Maidan, New Delhi
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: test@hotmail.com
+    - email_address: test@hotmail.com
+  - slot_was_set:
+    - email_address: test@hotmail.com
+  - action: action_send_results
+
+- story: interactive_story_15
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - price: mid
+  - slot_was_set:
+    - price: mid
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - results: "The Big Chill Cakery in 3B, Main Market, Khan Market, New Delhi has been rated 4.8\nThe Big Chill Cakery in Ground Floor, DLF Mall Of India, Sector 18, Noida has been rated 4.8\nCountry Club Pizza in B-114, 2nd Floor, Panscheel Vihar, Malviya Nagar, New Delhi has been rated 4.8\nWenger's in A 16, Connaught Place, New Delhi has been rated 4.7\nNatural Ice Cream in L-8, L Block, Outer Circle, Connaught Place, New Delhi has been rated 4.7\n"
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+
+- story: interactive_story_16
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - cuisine: Chinese
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: high
+    - price: High
+  - slot_was_set:
+    - price: High
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - results: "Indian Accent in The Lodhi, Lodhi Road, New Delhi has been rated 4.9\nCafe Lota in National Crafts Museum, Gate 2, Bhairon Marg, Pragati Maidan, New Delhi has been rated 4.9\nPa Pa Ya in A-3, Select Citywalk, District Centre, Saket, New Delhi has been rated 4.9\nManhattan Bar & Brewery in 1st Floor, Global Foyer Mall, Sector 43, Golf Course Road, Gurgaon has been rated 4.8\nSpezia Bistro in 2525, 1st Floor, Hudson Lane, Delhi University-GTB Nagar, New Delhi has been rated 4.7\n"
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+
+- story: interactive_story_17
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - price: Mid
+  - slot_was_set:
+    - price: Mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - results: ''
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+
+- story: interactive_story_18
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - cuisine: chinese
+    - location: delhi
+    - price: mid
+    - cuisine: chinese
+    - location: delhi
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - price: mid
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - results: ''
+  - action: utter_send_results
+  - intent: greet
+  - action: utter_goodbye
+
+- story: interactive_story_19
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - price: mid
+  - slot_was_set:
+    - price: mid
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: mid
+    - price: Mid
+  - slot_was_set:
+    - price: Mid
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - cuisine: Chinese
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - results: "Hearsch Bakery in 90/A, Next to Holy Family Hospital, Hill Road, Bandra West, Mumbai has been rated 4.7\nMiku Dimsum in Santacruz West, Mumbai has been rated 4.7\nGravies & Tikkas in Shop 5/B, Sitladevi CHS, L.K Road, Near D.N Nagar Metro Station, Azad Nagar, Mumbai has been rated 4.7\nMilliways Broth Noodle & Bao in Shop 12, Piroja Mansion, Alibhai Premji Road, Grant Road, Mumbai has been rated 4.6\nFat Buddha in Andheri Lokhandwala, Andheri West, Mumbai has been rated 4.6\n"
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results
+- story: interactive_story_20
+  steps:
+  - intent: restaurant_search
+    entities:
+    - price: low
+    - price: low
+  - slot_was_set:
+    - price: low
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - results: "Indian Accent in The Lodhi, Lodhi Road, New Delhi has been rated 4.9\nPa Pa Ya in A-3, Select Citywalk, District Centre, Saket, New Delhi has been rated 4.9\nThe Big Chill in 68-A, Khan Market, New Delhi has been rated 4.9\nThe Big Chill in 35, Khan Market, New Delhi has been rated 4.9\nManhattan Bar & Brewery in 1st Floor, Global Foyer Mall, Sector 43, Golf Course Road, Gurgaon has been rated 4.8\n"
+  - action: utter_send_results
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: utter_send_results
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - email_address: utkarsharma2@gmail.com
+    - email_address: utkarsharma2@gmail.com
+  - slot_was_set:
+    - email_address: utkarsharma2@gmail.com
+  - action: action_send_results

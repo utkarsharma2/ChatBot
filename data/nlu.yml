@@ -1,0 +1,207 @@
+version: "2.0"
+nlu:
+- intent: affirm
+  examples: |
+    - yes
+    - yep
+    - yeah
+    - indeed
+    - that's right
+    - ok
+    - great
+    - right, thank you
+    - correct
+    - great choice
+    - sounds really good
+    - thanks
+    - sure
+    - yes sure
+    - yup
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - na
+    - that's wrong
+    - wrong
+    - bad choice
+    - not good
+    - No
+    - [no](deny), thanks
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - good bye
+    - stop
+    - end
+    - farewell
+    - Bye bye
+    - have a good one
+- intent: greet
+  examples: |
+    - hey
+    - howdy
+    - hey there
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - dear sir
+    - deny
+- intent: email
+  examples: |
+    - [example@gmail.com](email_address)
+    - [example@example.com](email_address)
+    - [example_1@example.com](email_address)
+    - [examp.le_1@example.com](email_address)
+    - here is my [email@gmail.com](email_address)
+    - here you go [example_1@example.com](email_address)
+    - email [example_1@example.com](email_address)
+    - it is  [example_1@example.com](email_address)
+    - [test@gmail.com](email_address)
+    - [utkarsharma2@gmail.com](email_address)[utkarsharma2@gmail.com](email_address)
+    - [utkarsharma2@gmail.com](email_address)
+    - [utkarsh@gmail.com](email_address)[utkarsh@gmail.com](email_address)
+    - [mail@gmail.com](email_address)[mail@gmail.com](email_address)
+    - [test@hotmail.com](email_address)[test@hotmail.com](email_address)
+    - [utkarsharma2@gmail.com](email_address)[utkarsharma2@gmail.com](email_address)
+- intent: restaurant_search
+  examples: |
+    - i'm looking for a place to eat
+    - I want to grab lunch
+    - I am searching for a dinner spot
+    - I am looking for some restaurants in [Delhi](location).
+    - I am looking for some restaurants in [Bangalore](location)
+    - show me [chinese](cuisine) restaurants
+    - show me [chines]{"entity": "cuisine", "value": "chinese"} restaurants in the [New Delhi]{"entity": "location", "value": "Delhi"}
+    - show me a [mexican](cuisine) place in the [New Delhi]{"entity": "location", "value": "Delhi"}
+    - i am looking for an [mexican](cuisine) spot called olaolaolaolaolaola
+    - search for restaurants
+    - anywhere in the [mumbai](location)
+    - I am looking for [mexican](cuisine) food
+    - I am looking a restaurant in [mumbai](location)
+    - in [Chennai](location)
+    - [South Indian](cuisine)
+    - [North Indian](cuisine)
+    - [Italian](cuisine)
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}
+    - [Calcutta](location)
+    - Oh, sorry, in [Calcutta](location)
+    - in [delhi](location)
+    - I am looking for some restaurants in [Mumbai](location)
+    - I am looking for [mexican](cuisine)
+    - can you book a table in [mumbai](location) in a [moderate]{"entity": "price", "value": "mid"} price range with [South Indian](cuisine) food for [four]{"entity": "people", "value": "4"} people
+    - can you book a table in [Kolkata](location) in a [high](price) price range with [American](cuisine) food for [four]{"entity": "people", "value": "4"} people
+    - can you book a table in [Calcutta](location) in a [high](price) price range with [American](cuisine) food for [four]{"entity": "people", "value": "4"} people
+    - can you book a table in [Chennai](location) in a [low](price) price range with [Italian](cuisine) food for [four]{"entity": "people", "value": "4"} people
+    - find me a [mid](price) range restaurants in [delhi](location)
+    - locate [high](price) range restaurants in [Hyderabad](location)
+    - [mumbai](location) [Chinese]{"entity": "cuisine", "value": "chinese"} restaurant
+    - please help me to find restaurants in [pune](location)
+    - Please find me a restaurant in [bangalore](location)
+    - [Pune](location)
+    - [mumbai](location)
+    - [Kolkata](location)
+    - [Hyderabad](location)
+    - [Chennai](location)
+    - [Ahmedabad](location)
+    - show me restaurants
+    - please find me [chinese](cuisine) restaurant in [delhi](location)
+    - can you find me a [chinese](cuisine) restaurant
+    - can you find me a [Italian]{"entity": "cuisine", "value": "chinese"} restaurant
+    - [delhi](location)
+    - please find me a restaurant in [ahmedabad](location)
+    - please show me a few [italian](cuisine) restaurants in [bangalore](location)
+    - please show me a few [American](cuisine) restaurants in [Hyderabad](location)
+    - [mid](price)
+    - [high](price)
+    - [low](price)
+    - [moderate]{"entity": "price", "value": "mid"}
+    - find me
+    - find me a restaurant
+    - [Mid]{"entity": "price", "value": "mid"}
+    - find me a restaurant in [mid](price) range in [delhi](location)
+    - [High]{"entity": "price", "value": "high"}
+    - find me [mid](price) range restaurant in [mumbai](location)
+    - find me an [italian](cuisine) restaurant in [mid](price) range
+    - find me a restaurant in [delhi](location)
+    - [Low]{"entity": "price", "value": "low"}
+    - search restaurant
+    - [Mexican](cuisine)
+    - search restaurants
+    - looking for a restaurant
+    - [American](cuisine)
+    - search for a restaurant in [delhi](location)[delhi](location)
+    - [South Indian](cuisine)[South Indian](cuisine)
+    - [Low]{"entity": "price", "value": "low"}[Low](price)
+    - search for a resaturant
+    - [delhi](location)[delhi](location)
+    - searcg for a restaurant
+    - [mumbai](location)[mumbai](location)
+    - [Mexican](cuisine)[Mexican](cuisine)
+    - look for a restaurant in [delhi](location)[delhi](location) in [mid](price)[mid](price) range
+    - [American](cuisine)[American](cuisine)
+    - find me a restaurent
+    - [Mid]{"entity": "price", "value": "mid"}[Mid](price)
+    - [North Indian](cuisine)[North Indian](cuisine)
+    - find me a [italian]{"entity": "cuisine", "value": "chinese"}[italian](cuisine) restaurant in [delhi](location)[delhi](location) in [mid](price)[mid](price) range
+    - I'm looking for [italian]{"entity": "cuisine", "value": "chinese"}[italian](cuisine) restaurant in [mumbai](location)[mumbai](location)
+    - find me a [high](price)[high](price) range restaurant in [mumbai](location)[mumbai](location)
+    - fine me a [mid](price)[mid](price) range [italian]{"entity": "cuisine", "value": "chinese"}[italian](cuisine) restaurant
+    - fine me a restaurant in [mid](price)[mid](price) range
+    - [Italian]{"entity": "cuisine", "value": "chinese"}[Italian](cuisine)
+    - find me a restaurant in [delhi](location)[delhi](location)
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}[Chinese](cuisine)
+    - [High]{"entity": "price", "value": "high"}[High](price)
+    - find me a [chinese](cuisine)[chinese](cuisine) restaurant
+    - find me a [mid](price)[mid](price) range [chinese](cuisine)[chinese](cuisine) restaurant in [delhi](location)[delhi](location)
+    - find me a [mid](price)[mid](price) range restaurant
+    - find me a [low](price)[low](price) range restaurant
+    - [delhi](location)[delhi](location)
+    - [Italian]{"entity": "cuisine", "value": "chinese"}[Italian](cuisine)
+- synonym: chinese
+  examples: |
+    - chines
+    - Chinese
+    - Italian
+    - italian
+    - Chines
+- synonym: Delhi
+  examples: |
+    - New Delhi
+- synonym: mid
+  examples: |
+    - moderate
+    - Mid
+- synonym: '4'
+  examples: |
+    - four
+- synonym: high
+  examples: |
+    - High
+- synonym: low
+  examples: |
+    - Low
+- synonym: Kolkata
+  examples: |
+    - Calcutta
+- synonym: bangalore
+  examples: |
+    - Bengaluru
+- synonym: mumbai
+  examples: |
+    - Bombay
+- synonym: vegetarian
+  examples: |
+    - veggie
+    - vegg
+- regex: email
+  examples: |
+    - [a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$
+- regex: greet
+  examples: |
+    - hey[^\s]*
+- regex: pincode
+  examples: |
+    - [0-9]{6}
